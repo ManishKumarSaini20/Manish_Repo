@@ -34,8 +34,7 @@ public:
     // }
 };
 
-
-class C:public A
+class C : public A
 {
 public:
     C()
@@ -47,6 +46,14 @@ public:
     {
         std::cout << "C::~C" << std::endl;
     }
+};
+
+class CBASE
+{
+};
+
+class CDERIVED : public CBASE
+{
 };
 
 class CMAnish
@@ -100,24 +107,27 @@ int main()
     std::cout << "*pe = " << *pe << std::endl;
     std::cout << "*pf = " << *pf << std::endl;
     A *pAA = new B;
-    B* pBB = static_cast<B*>(pAA);
-    B* pBB1 = dynamic_cast<B*>(pAA);
-    if(pBB1 != nullptr)
+    B *pBB = static_cast<B *>(pAA);
+    B *pBB1 = dynamic_cast<B *>(pAA);
+    if (pBB1 != nullptr)
     {
-        std::cout<<"dynamic_cast is successfull for A to B"<<std::endl;
+        std::cout << "dynamic_cast is successfull for A to B" << std::endl;
     }
     else
     {
-        std::cout<<"dynamic_cast is failed for A to B"<<std::endl;
+        std::cout << "dynamic_cast is failed for A to B" << std::endl;
     }
-    C* pCC = dynamic_cast<C*>(pAA);
-    if(pCC != nullptr)
+    C *pCC = dynamic_cast<C *>(pAA);
+    if (pCC != nullptr)
     {
-        std::cout<<"dynamic_cast is successfull for A to C"<<std::endl;
+        std::cout << "dynamic_cast is successfull for A to C" << std::endl;
     }
     else
     {
-        std::cout<<"dynamic_cast is failed for A to C"<<std::endl;
+        std::cout << "dynamic_cast is failed for A to C" << std::endl;
     }
+
+    CBASE *pBbbb = new CBASE;
+    CDERIVED *pD = static_cast<CDERIVED *>(pBbbb);
     return 0;
 }
