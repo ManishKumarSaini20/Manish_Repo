@@ -16,8 +16,8 @@ int main()
     {
         std::cout<<"Number is even"<<std::endl;
     }
-
-    int iresult = objAlgorithm_R_D->OddOccuranceOfANumber();
+    int iArray[] = {13,13,14,14,15,16,16,19,19,20,20};
+    int iresult = objAlgorithm_R_D->OddOccuranceOfANumber<int>(iArray);
     std::cout<<"OddOccuranceOfANumber result = "<<iresult<<std::endl;
     return 0;
 }
