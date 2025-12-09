@@ -1,5 +1,6 @@
 #include <memory>
 #include <iostream>
+#include "Header_Files\do_while_loop.h"
 class A
 {
 public:
@@ -129,5 +130,11 @@ int main()
 
     CBASE *pBbbb = new CBASE;
     CDERIVED *pD = static_cast<CDERIVED *>(pBbbb);
+    /*
+    do while loop logic
+    */
+    int iValue = 5;
+    std::unique_ptr<MANISH::ROOPA::VIRAT::dowhileloop> objdowhileloop = std::make_unique<MANISH::ROOPA::VIRAT::dowhileloop>(iValue);
+    objdowhileloop->FuncDoWhileLoop(7);
     return 0;
 }
