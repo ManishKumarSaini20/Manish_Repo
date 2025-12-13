@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Header_Files\do_while_loop.h"
 #include "Header_Files\tuple_pair_return_multi_val.h"
+#include "Header_Files\enumclass_switchcase.h"
 class A
 {
 public:
@@ -171,7 +172,13 @@ int main()
     int aaa{0};
     char ccc;
     float fff{0};
-    objtuple_pair_return_multi_val->funcreturningreferenceandpointer(aaa,&ccc,fff);
-    std::cout<<"aaa = "<<aaa<<" ccc = "<<ccc<<" fff = "<<fff<<std::endl;
+    objtuple_pair_return_multi_val->funcreturningreferenceandpointer(aaa, &ccc, fff);
+    std::cout << "aaa = " << aaa << " ccc = " << ccc << " fff = " << fff << std::endl;
+    /*
+    enumclass_switchcase functioality
+    */
+    std::unique_ptr<MANISH::VIRAT::enumclass_switchcase> objenumclass_switchcase = std::make_unique<MANISH::VIRAT::enumclass_switchcase>();
+    MANISH::VIRAT::DIRECTION edirectionvalue = MANISH::VIRAT::DIRECTION::EAST;
+    objenumclass_switchcase->enumswitchcasefunction(edirectionvalue);
     return 0;
 }
