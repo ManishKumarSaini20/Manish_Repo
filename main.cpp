@@ -3,6 +3,7 @@
 #include "Header_Files\do_while_loop.h"
 #include "Header_Files\tuple_pair_return_multi_val.h"
 #include "Header_Files\enumclass_switchcase.h"
+#include "Header_Files\callback_function.h"
 class A
 {
 public:
@@ -180,5 +181,13 @@ int main()
     std::unique_ptr<MANISH::VIRAT::enumclass_switchcase> objenumclass_switchcase = std::make_unique<MANISH::VIRAT::enumclass_switchcase>();
     MANISH::VIRAT::DIRECTION edirectionvalue = MANISH::VIRAT::DIRECTION::EAST;
     objenumclass_switchcase->enumswitchcasefunction(edirectionvalue);
+    /*
+    callback_function functionality
+    */
+   std::unique_ptr<MANISH::ROOPA::VIRAT::callback_function> objcallback_function = std::make_unique<MANISH::ROOPA::VIRAT::callback_function>();
+   const int aaaa = 10;
+   const int bbbb = 20;
+   int returnval = 0;
+   objcallback_function->printval(MANISH::ROOPA::VIRAT::callback_function::addfunc, aaaa,bbbb);
     return 0;
 }
