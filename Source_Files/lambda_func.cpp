@@ -13,9 +13,9 @@ namespace MANISH
             }
             void lambdafunc::trigger()
             {
-                for(auto f : handlervect)
+                for(std::function<void()> f : handlervect)
                 {
-                    std::cout<<"lambdafunc::subscribe.\n";
+                    std::cout<<"lambdafunc::trigger.\n";
                     f();
                 }
             }
