@@ -87,6 +87,7 @@ public:
 
 int main()
 {
+    // casting operator functionality starts
     A a;
     B b = static_cast<B>(a);
     // std::unique_ptr<A> pA = std::make_unique<A>();
@@ -133,15 +134,15 @@ int main()
 
     CBASE *pBbbb = new CBASE;
     CDERIVED *pD = static_cast<CDERIVED *>(pBbbb);
-    /*
-    do while loop logic
-    */
+    // casting operator functionality ends
+
+    //do_while_loop.h functionlity starts
     int iValue = 5;
     std::unique_ptr<MANISH::ROOPA::VIRAT::dowhileloop> objdowhileloop = std::make_unique<MANISH::ROOPA::VIRAT::dowhileloop>(iValue);
     objdowhileloop->FuncDoWhileLoop(7);
-    /*
-    tuple_pair_return_multi_val functioality
-    */
+    //do_while_loop.h functionlity ends
+
+    // tuple_pair_return_multi_val.h functionality starts
     std::unique_ptr<MANISH::ROOPA::VIRAT::tuple_pair_return_multi_val> objtuple_pair_return_multi_val = std::make_unique<MANISH::ROOPA::VIRAT::tuple_pair_return_multi_val>();
     objtuple_pair_return_multi_val->tuple_get_make();
     int iSize = 0;
@@ -175,19 +176,20 @@ int main()
     float fff{0};
     objtuple_pair_return_multi_val->funcreturningreferenceandpointer(aaa, &ccc, fff);
     std::cout << "aaa = " << aaa << " ccc = " << ccc << " fff = " << fff << std::endl;
-    /*
-    enumclass_switchcase functioality
-    */
+    // tuple_pair_return_multi_val.h functionality ends
+
+    //enumclass_switchcase.h functionality starts
     std::unique_ptr<MANISH::VIRAT::enumclass_switchcase> objenumclass_switchcase = std::make_unique<MANISH::VIRAT::enumclass_switchcase>();
     MANISH::VIRAT::DIRECTION edirectionvalue = MANISH::VIRAT::DIRECTION::EAST;
     objenumclass_switchcase->enumswitchcasefunction(edirectionvalue);
-    /*
-    callback_function functionality
-    */
+    //enumclass_switchcase.h functionality ends
+
+    //callback_function.h functionality starts
     std::unique_ptr<MANISH::ROOPA::VIRAT::callback_function> objcallback_function = std::make_unique<MANISH::ROOPA::VIRAT::callback_function>();
     const int aaaa = 10;
     const int bbbb = 20;
     int returnval = 0;
     objcallback_function->printval(MANISH::ROOPA::VIRAT::callback_function::addfunc, aaaa, bbbb);
+    //callback_function.h functionality ends
     return 0;
 }
