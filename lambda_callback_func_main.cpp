@@ -38,6 +38,31 @@ void raiseerror(void (*callback) (const std::string& ), int ival)
     }
 }
 
+int addf(int a, int b)
+{
+    return a+b;
+}
+
+int subf(int a, int b)
+{
+    return a-b;
+}
+
+int mulf(int a, int b)
+{
+    return a*b;
+}
+
+int divf(int a, int b)
+{
+    return a/b;
+}
+
+void Printfunc(std::function<int(int, int)> callback, int x, int y)
+{
+    std::cout<<callback(x,y)<<std::endl;
+}
+
 int main()
 {
      //lambda functionality starts
@@ -126,5 +151,9 @@ int main()
     //lambda_func.h functionality ends
     std::function<int(MANISH::ROOPA::VIRAT::lambdafunc&, int,int)> addff = &MANISH::ROOPA::VIRAT::lambdafunc::addf;
     std::cout<<"addf = "<<addff(objlambdafunc, 10,20)<<std::endl;
+    Printfunc(addf, 11,22);
+    Printfunc(subf, 22,11);
+    Printfunc(mulf, 5,6);
+    Printfunc(divf, 22,11);
     return 0;
 }
