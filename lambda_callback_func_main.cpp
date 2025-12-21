@@ -124,5 +124,7 @@ int main()
     std::cout << "Simulating button click...\n";
     objlambdafunc.trigger();
     //lambda_func.h functionality ends
+    std::function<int(MANISH::ROOPA::VIRAT::lambdafunc&, int,int)> addff = &MANISH::ROOPA::VIRAT::lambdafunc::addf;
+    std::cout<<"addf = "<<addff(objlambdafunc, 10,20)<<std::endl;
     return 0;
 }

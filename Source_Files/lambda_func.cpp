@@ -19,6 +19,12 @@ namespace MANISH
                     f();
                 }
             }
+
+            int lambdafunc::addf(int a, int b)
+            {
+                std::cout<<"lambdafunc::addf.\n";
+                return a+b;
+            }
         }
     }
 }

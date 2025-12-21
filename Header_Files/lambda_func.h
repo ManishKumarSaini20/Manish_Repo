@@ -21,6 +21,7 @@ namespace MANISH
                 }
                 void subscribe(std::function<void()> handler);
                 void trigger();
+                int addf(int, int);
                 private:
                 std::vector<std::function<void()>> handlervect;
             };
