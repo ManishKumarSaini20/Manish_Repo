@@ -63,6 +63,29 @@ void Printfunc(std::function<int(int, int)> callback, int x, int y)
     std::cout<<callback(x,y)<<std::endl;
 }
 
+struct stManish
+{
+    int a{0};
+    char b;
+    float c{0};
+};
+
+union uManish
+{
+    int a{0};
+    char b;
+    float c;
+};
+
+union Student 
+{
+    int rollNo;
+    float height;
+    char firstLetter;
+};
+
+union Data { int i; float f; char c; };
+
 int main()
 {
      //lambda functionality starts
@@ -155,5 +178,34 @@ int main()
     Printfunc(subf, 22,11);
     Printfunc(mulf, 5,6);
     Printfunc(divf, 22,11);
+
+    /*
+    union functionality
+    */
+    std::cout<<"sizeof(stManish) = "<<sizeof(stManish)<<std::endl;
+    std::cout<<"sizeof(uManish) = "<<sizeof(uManish)<<std::endl;
+
+    // Declare a union variable
+    Student data;
+
+    data.rollNo = 21;
+    std::cout << data.rollNo << std::endl;
+
+    data.height = 5.2;
+    std::cout << data.height << std::endl;
+    std::cout << data.rollNo << std::endl;
+
+    data.firstLetter = 'N';
+    std::cout << data.firstLetter << std::endl;
+    std::cout << data.rollNo << std::endl;
+    std::cout << data.height << std::endl;
+
+
+    union Data d; 
+    d.i = 65; // store integer 
+    printf("i = %d, f = %f, c = %c\n", d.i, d.f, d.c); 
+    d.c = 'G'; // store character 
+    printf("i = %d, f = %f, c = %c\n", d.i, d.f, d.c);
+
     return 0;
 }
