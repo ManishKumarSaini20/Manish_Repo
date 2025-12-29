@@ -23,7 +23,7 @@ namespace MANISH
                     if (nullptr == instance)
                     {
                         instance = std::unique_ptr<Singleton>(new Singleton());
-                        //instance = std::make_unique<Singleton>();
+                        // instance = std::make_unique<Singleton>();
                     }
                     return *instance;
                 }
