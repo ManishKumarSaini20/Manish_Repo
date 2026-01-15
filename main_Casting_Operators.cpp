@@ -12,5 +12,12 @@ int main()
     pderivedClass->DiaplayFunc();
     pderivedClass->driveclassFunc();
     delete pderivedClass;
+
+    //const_cast_class functionality starts
+    std::unique_ptr<MANISH::ROOPA::VIRAT::const_cast_class> myconst_cast_classobj = std::make_unique<MANISH::ROOPA::VIRAT::const_cast_class>(11,22);
+    myconst_cast_classobj->DisplayVal();
+    myconst_cast_classobj->SetValue(88,99);
+    myconst_cast_classobj->DisplayVal();
+    //const_cast_class functionality ends
     return 0;
 }
