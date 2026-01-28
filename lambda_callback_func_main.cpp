@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <memory>
+#include <functional>
 #include "Header_Files\lambda_func.h"
 
 
@@ -30,7 +31,8 @@ void logerror(const std::string& logmsg)
     std::cout<<"Error : "<<logmsg<<std::endl;
 }
 
-void raiseerror(void (*callback) (const std::string& ), int ival)
+//void raiseerror(void (*callback) (const std::string& ), int ival)
+void raiseerror(std::function<void(const std::string&)> callback, int ival)
 {
     if(ival < 0)
     {
