@@ -67,9 +67,9 @@ void Printfunc(std::function<int(int, int)> callback, int x, int y)
 
 struct stManish
 {
-    int a{0};
-    char b;
+    std::uint8_t a{0};
     float c{0};
+    char b{0};
 };
 
 union uManish
