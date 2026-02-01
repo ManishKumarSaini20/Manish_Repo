@@ -1,6 +1,8 @@
 #include <iostream>
 #include <memory>
 #include <functional>
+#include <array>
+#include <algorithm>
 
 namespace MANISH
 {
@@ -49,6 +51,55 @@ int addf(int a, int b)
     return a+b;
 }
 
+std::array<int, 7> retarray()
+{
+    return {11,22,33,44,55,66,77};
+}
+
+bool asscendingorder(const int& a, const int& b)
+{
+    return a<b;
+}
+
+bool descendingorder(const int& a, const int& b)
+{
+    return a>b;
+}
+
+class CManish
+{
+public:
+    CManish()
+    {
+    }
+
+    ~CManish()
+    {
+    }
+
+    bool operator()(const int& a, const int& b)
+    {
+        return a<b;
+    }
+};
+
+class CVirat
+{
+public:
+    CVirat()
+    {
+    }
+
+    ~CVirat()
+    {
+    }
+
+    bool operator()(const int& a, const int& b)
+    {
+        return a>b;
+    }
+};
+
 int main()
 {
     // Volatile keyword functionality starts
@@ -73,5 +124,59 @@ int main()
     std::cout<<addFunc(11,22)<<std::endl;
     //std::function clas functionality ends
 
+    //std::array container class functionality starts
+    std::cout<<"std::array functionality starts.\n";
+    std::array<int ,7> retarr = retarray();
+    for(int& i : retarr)
+    {
+        std::cout<<i<<std::endl;
+    }
+    std::cout<<"retarr.size = "<<retarr.size()<<std::endl;
+    std::cout<<"retarr.fromt = "<<retarr.front()<<std::endl;
+    std::cout<<"retarr.back = "<<retarr.back()<<std::endl;
+    std::array<int,7>::iterator it;
+    for(it = retarr.begin(); it != retarr.end(); ++it)
+    {
+        std::cout<<"*it = "<<*it<<std::endl;
+    }
+    std::array<int,7> intarray = {3,1,7,5,9,6,4};
+    std::sort(intarray.begin(), intarray.end(), asscendingorder);
+    std::cout<<"intarray in asscendingorder order using callback.\n";
+    for(int& a : intarray)
+    {
+        std::cout<<a<<std::endl;
+    }
+    std::sort(intarray.begin(), intarray.end(), descendingorder);
+    std::cout<<"intarray in descendingorder order using callback.\n";
+    for(int& a : intarray)
+    {
+        std::cout<<a<<std::endl;
+    }
+    std::sort(intarray.begin(), intarray.end(), [](const int& a, const int& b){return a<b;});
+    std::cout<<"intarray in asscendingorder order using lambda.\n";
+    for(int& a : intarray)
+    {
+        std::cout<<a<<std::endl;
+    }
+    std::sort(intarray.begin(), intarray.end(), [](const int& a, const int& b){return a>b;});
+    std::cout<<"intarray in descendingorder order using lambda.\n";
+    for(int& a : intarray)
+    {
+        std::cout<<a<<std::endl;
+    }
+
+    std::sort(intarray.begin(), intarray.end(), CManish());
+    std::cout<<"intarray in asscendingorder order using functor.\n";
+    for(int& a : intarray)
+    {
+        std::cout<<a<<std::endl;
+    }
+    std::sort(intarray.begin(), intarray.end(), CVirat());
+    std::cout<<"intarray in descendingorder order using functor.\n";
+    for(int& a : intarray)
+    {
+        std::cout<<a<<std::endl;
+    }
+    //std::array container class functionality ends
     return 0;
 }
