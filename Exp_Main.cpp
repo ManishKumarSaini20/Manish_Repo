@@ -100,6 +100,13 @@ public:
     }
 };
 
+union uManish
+{
+    int a = 0;
+    double dd;
+    char c;
+};
+
 int main()
 {
     // Volatile keyword functionality starts
@@ -178,5 +185,22 @@ int main()
         std::cout<<a<<std::endl;
     }
     //std::array container class functionality ends
+
+    //union example starts
+    std::cout<<"sizeof(uManish) = "<<sizeof(uManish)<<std::endl;
+    uManish objuManish;
+    objuManish.a = 67;
+    std::cout<<"objuManish.a = "<<objuManish.a<<std::endl;
+    std::cout<<"objuManish.c = "<<objuManish.c<<std::endl;
+    std::cout<<"objuManish.dd = "<<objuManish.dd<<std::endl;
+    objuManish.c = 'A';
+    std::cout<<"objuManish.a = "<<objuManish.a<<std::endl;
+    std::cout<<"objuManish.c = "<<objuManish.c<<std::endl;
+    std::cout<<"objuManish.dd = "<<objuManish.dd<<std::endl;
+    objuManish.dd = 30;
+    std::cout<<"objuManish.a = "<<objuManish.a<<std::endl;
+    std::cout<<"objuManish.c = "<<objuManish.c<<std::endl;
+    std::cout<<"objuManish.dd = "<<objuManish.dd<<std::endl;
+    //union example ends
     return 0;
 }
