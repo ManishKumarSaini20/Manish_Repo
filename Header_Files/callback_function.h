@@ -1,5 +1,7 @@
 #include <iostream>
-
+#pragma once
+/* Here we will learn how to use callback function for the class member function. Generally we are using the 
+callback outside the class.*/
 namespace MANISH
 {
     namespace ROOPA
