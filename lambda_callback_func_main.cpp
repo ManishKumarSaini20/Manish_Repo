@@ -18,12 +18,12 @@ void printvector(MYVECT vect)
 
 bool ascendingvector(const int& a, const int& b)
 {
-    return (a<b)?true:false;
+    return a<b;
 }
 
 bool descendingvector(const int& a, const int& b)
 {
-    return (a>b)?true:false;
+    return a>b;
 }
 
 void logerror(const std::string& logmsg)
@@ -99,19 +99,19 @@ int main()
     MYVECT vect1;
     MYVECT vect2;
 
-    auto vectbyref = [&](int x)
+    auto vectbyref = [&](int x) -> void
     {
         vect1.push_back(x);
         vect2.push_back(x);
     };
 
-    auto vectbyval = [=](int x) mutable
+    auto vectbyval = [=](int x) mutable -> void
     {
         vect1.push_back(x);
         vect2.push_back(x);
     };
 
-    auto vectmix = [&vect1, vect2](int x) mutable
+    auto vectmix = [&vect1, vect2](int x) mutable -> void
     {
         vect1.push_back(x);
         vect2.push_back(x);
